@@ -6,7 +6,7 @@
   <p-organizationChart [value]="data1" >
     <ng-template (contextmenu)="onRightClick($event)" let-node pTemplate="member">
       <div aria-haspopup="true" pTooltip="{{ node.data.description | breakLine }}" class="member-node">
-        <div class="node-position">
+        <div class="node-position" [appBackgroundColor]="node.data.positionTitle === 'leader' ? '#f03630' : '#99cacc'">
           {{ node.data.positionTitle | capitalizeText }}
         </div>
 
