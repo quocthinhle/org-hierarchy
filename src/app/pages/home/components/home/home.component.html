@@ -1,0 +1,17 @@
+<ng-container *ngIf="isNoteRoute()">
+  <div
+    #dragArea
+    class="main-content"
+    style="width: 100vw; height: 80vh;"
+  >
+    <div
+      class="example-box"
+      [cdkDragBoundary]="dragArea"
+      (cdkDragEnded)="dragEnd($event)"
+      cdkDrag
+    >
+      <a routerLink="/note/angular-tree">Angular Tree</a>
+    </div>
+  </div>
+
+</ng-container>

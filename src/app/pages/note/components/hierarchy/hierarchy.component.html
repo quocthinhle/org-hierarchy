@@ -1,0 +1,35 @@
+<div #orgChart class="hierarchy-content">
+  <div style="margin-top: 3rem;">
+    <h1>Organization Chart</h1>
+  </div>
+
+  <p-organizationChart [value]="data1" >
+    <ng-template (contextmenu)="onRightClick($event)" let-node pTemplate="member">
+      <div aria-haspopup="true" pTooltip="{{ node.data.description | breakLine }}" class="member-node">
+        <div class="node-position">
+          {{ node.data.positionTitle | capitalizeText }}
+        </div>
+
+        <div class="member-node-content">
+          <img src="{{ '../../../../../../../assets/images/phu-dang.jpg' }}" class="mb-3 w-3rem h-3rem" />
+          <div class="node-header">{{ node.data.firstName }}</div>
+          <div class="node-content"></div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template (contextmenu)="onRightClick($event)" let-node pTemplate="department">
+      <div aria-haspopup="true" class="department-node">
+        <div class="department-node-content">
+          <img src="{{ '../../../../../../../assets/images/departments.png' }}" class="mb-3 w-3rem h-3rem" />
+          <div class="node-header">
+            <span class="node-title">{{ node.data.departmentName }}</span>
+          </div>
+          <div class="node-content"></div>
+        </div>
+      </div>
+    </ng-template>
+  </p-organizationChart>
+</div>
+
+<p-contextMenu #contextMenu [target]="orgChart" [model]="items"></p-contextMenu>

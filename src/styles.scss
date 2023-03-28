@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.p-tooltip-text {
+    font-size: 10px;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.w-3rem {
+    width: 3rem;
+}
+
+.h-3rem {
+    height: 3rem;
+}
+
+.p-organizationchart .p-organizationchart-node-content {
+    border: 1px solid #dee2e6;
+    background: #ffffff;
+    color: #495057;
+    padding: 0rem !important;
+}
